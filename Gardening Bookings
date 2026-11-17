@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NC Gardening — Book a Visit</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8faf8 0%, #eaf4ea 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .logo-circle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100px;
+            height: 100px;
+            background: #000;
+            border-radius: 50%;
+            color: #fff;
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .logo-circle span {
+            color: #f9c8e8;
+        }
+
+        h1 {
+            color: #2d472d;
+            font-size: 26px;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            color: #5a755a;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .form-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            color: #2d472d;
+            font-weight: 600;
+            margin: 30px 0 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid #e8f0e8;
+        }
+
+        .section-title:first-of-type {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            color: #3a4b3a;
+            font-weight: 500;
+            font-size: 15px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #d8e2d8;
+            border-radius: 10px;
+            font-size: 15px;
+            margin-bottom: 18px;
+            transition: border 0.3s ease;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #7eb87e;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .checkbox-group {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            cursor: pointer;
+        }
+
+        .checkbox-group input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: #4a7c4a;
+            margin-top: 2px;
+        }
+
+        .checkbox-group label {
+            margin-bottom: 0;
+            cursor: pointer;
+        }
+
+        button {
+            width: 100%;
+            background: linear-gradient(135deg, #4a7c4a 0%, #3d663d 100%);
+            color: #fff;
+            border: none;
+            padding: 15px;
+            font-size: 17px;
+            font-weight: 600;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: transform 0.2s ease;
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+        }
+
+        .footer-note {
+            text-align: center;
+            font-size: 13px;
+            color: #7a907a;
+            margin-top: 25px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #thankYou {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        #thankYou h2 {
+            color: #4a7c4a;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .required-note {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-circle">N+C<span>🌸</span></div>
+            <h1>Book a Visit with NC Gardening</h1>
+            <p class="subtitle">🌿 Welcome! Just pop your details in below, tell us what you need, and we'll get back to you very soon to arrange a time. Thank you! 💐</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="form-card" id="formCard">
+            <form action="https://formsubmit.co/ncgardening123@gmail.com" method="POST">
+                <input type="hidden" name="_subject" value="New Booking Request — NC Gardening">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+
+                <h3 class="section-title">📍 Your Details</h3>
+                <p class="required-note">* Required fields</p>
+
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="Name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="Email">
+
+                <label for="address">Full Address & Postcode *</label>
+                <textarea id="address" name="Address" required></textarea>
+
+                <label for="phone">Phone Number *</label>
+                <input type="tel" id="phone" name="Phone" required>
+
+                <h3 class="section-title">🌿 Services Needed</h3>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="front-lawn" name="Services" value="Front Lawn Mowing">
+                    <label for="front-lawn">Front Lawn Mowing</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="back-lawn" name="Services" value="Back Lawn Mowing">
+                    <label for="back-lawn">Back Lawn Mowing</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="hedge" name="Services" value="Hedge Trimming">
+                    <label for="hedge">Hedge Trimming</label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="tidy" name="Services" value="Full Garden Tidy Up">
+                    <label for="tidy">Full Garden Tidy Up</label>
+                </div>
+
+                <label style="margin-top: 15px;" for="other">Other — tell us what you need:</label>
+                <input type="text" id="other" name="Other Service" placeholder="Anything else?">
+
+                <h3 class="section-title">💬 Additional Info</h3>
+                <label for="notes">Is there anything we should know before arriving? (gate codes, pet names, best times to visit, etc.)</label>
+                <textarea id="notes" name="Additional Notes" placeholder="Tell us anything that might help us! 😊"></textarea>
+
+                <button type="submit">Send My Request ✨</button>
+            </form>
+        </div>
+
+        <!-- Thank You Message -->
+        <div class="form-card hidden" id="thankYou">
+            <h2>Thank You! 💐</h2>
+            <p>Your request has been sent successfully. We'll get back to you very soon — usually within 24 hours. Have a lovely day!</p>
+        </div>
+
+        <p class="footer-note">📞 Prefer to call? Text or ring: 07907235331<br>Fully Insured · Local & Reliable Service</p>
+    </div>
+
+    <script>
+        const form = document.querySelector('form');
+        const formCard = document.getElementById('formCard');
+        const thankYou = document.getElementById('thankYou');
+
+        form.addEventListener('submit', function(e) {
+            setTimeout(() => {
+                formCard.classList.add('hidden');
+                thankYou.classList.remove('hidden');
+            }, 300);
+        });
+    </script>
+</body>
+</html>
